@@ -1,20 +1,15 @@
-/* Navbar styling */
-.navbar {
-  width: 100%;
-  background-color: #f8f9fa;
-  text-align: center;
-}
-
-.navbar a {
-  text-decoration: none;
-  font-size: 16px;
-}
-
 /* General styling */
 body {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  margin: 0;
-  padding: 0;
+}
+
+.navbar a {
+  font-size: 20px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.dropdown-menu a {
+  font-size: 15px;
 }
 
 /* Header styling */
@@ -43,31 +38,18 @@ header {
   background-color: #222;
   font-size: x-large;
   margin: auto;
+  padding-left: 100px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-.navbar-brand {
-  /*padding-left: 190vh;*/
+@media (min-width: 992px) {
+  .navbar-expand-lg .navbar-nav .nav-link {
+    display: block; /* Gör så att alla nav-länkar är synliga */
+  }
 }
 
-.footer {
-  position: fixed;
-  bottom: 0;
-  line-height: 60px;
-  background-color: #222;
-  padding-top: 0;
-}
-
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: auto;
-}
-
-#navbarNav {
-  justify-content: end;
-}
-
-html, body {
-  height: 100%;
+@media (max-width: 992px) {
+  .navbar-expand-lg .navbar-collapse {
+    display: block !important; /* Gör navbaren alltid synlig på små skärmar */
+  }
 }
