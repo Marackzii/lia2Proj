@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="importmap"></script>
+    <title>Home page</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/Home.css"/>
+</head>
+<body>
+    <header>
+        <div class="containerRender"></div>
+    </header>
+
+<nav class="navbar navbar-toggleable-sm">
+    <div class="container">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link text-dark" href="/Home/Index">Planerade underhåll</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" href="/Home/Privacy">Avklarade</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+    <footer>
+        <p class="footer-text">Telge</p>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+</body>
+</html>
