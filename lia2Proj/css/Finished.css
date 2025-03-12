@@ -2,3 +2,17 @@
   background-color: #fdfdfd;
   border: 3px solid #36a016;
 }
+
+.lamp-container {
+  display: flex;
+  align-items: center; /* Detta justerar lampan och texten så att de är i linje */
+}
+
+.lamp {
+  width: 15px; /* Justera storleken på lampan */
+  height: 15px;
+  background-color: #36a016; /* Här kan du välja färg på lampan */
+  box-shadow: 0 0 2px 2px #36a016; /* Skugga för lampa-effekt */
+  border-radius: 50%; /* Gör lampan rund */
+  margin-right: 10px; /* Lägger till lite mellanrum mellan lampan och texten */
+}

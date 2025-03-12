@@ -1,13 +1,30 @@
+body {
+    overflow-x: hidden; /* Förhindra horisontell scroll */
+}
+
+.lamp-container {
+  display: flex;
+  align-items: center; /* Detta justerar lampan och texten så att de är i linje */
+}
+
+.lamp {
+  width: 15px; /* Justera storleken på lampan */
+  height: 15px;
+  background-color: #33106e; /* Här kan du välja färg på lampan */
+  box-shadow: 0 0 2px 2px #33106e; /* Skugga för lampa-effekt */
+  border-radius: 50%; /* Gör lampan rund */
+  margin-right: 10px; /* Lägger till lite mellanrum mellan lampan och texten */
+}
+
 #createUpcomingBtn {
-  background-color: #11032a; /* Blå bakgrund */
-  color: white; /* Vit text */
+  background-color: #33106e; 
+  color: white; 
   border: none; /* Ta bort standardkanterna */
   border-radius: 5px; /* Rundade hörn */
   padding: 10px 10px; /* Lite inre marginal */
-  font-size: 16px; /* Textstorlek */
+  font-size: 16px; 
   cursor: pointer; /* Gör att markören blir en pekare när man hovrar över */
   transition: background-color 0.3s ease; /* Smidig övergång vid hover */
-  margin-left: 175vh;
   font-size: small;
 }
 
@@ -18,4 +35,9 @@
 .flex-container {
   background-color: #fdfdfd;
   border: 3px solid #370f7e;
+}
+
+#calendar {
+  padding-right: 150vh;
+  font-size: xx-small;
 }

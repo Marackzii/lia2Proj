@@ -17,9 +17,16 @@ function addUpcoming()
     let nextUpdate = "Om 1 vecka";
     let contact = "John Doe/johndoe@gmail.com/07xxxxxxxx";
 
+    // Skapa lampan
+    let lamp = document.createElement("div");
+    lamp.classList.add("lamp");
+
     // Lägg till textinnehåll i contentDiv
     contentDiv.innerHTML = `
-    <strong>Driftstörning - ${systemName}</strong><br>
+    <span class="lamp-container">
+      ${lamp.outerHTML}
+      <strong>Driftstörning - ${systemName}</strong>
+    </span><br>    
     Starttid: ${startTime}<br>
     Problem: ${issue}<br>
     Åtgärd pågår: ${actionInProgress}<br>
@@ -38,3 +45,21 @@ upcomingContainer.appendChild(flexContainer);
 
 // Lägg till event listener till knappen för att skapa nya containers vid klick
 document.querySelector("#createUpcomingBtn").addEventListener("click", addUpcoming);
+
+// Lägg till event listener till knappen
+document.querySelector("#createUpcomingBtn").addEventListener("click", addUpcoming);
+
+// FullCalendar-initiering
+document.addEventListener('DOMContentLoaded', function () {
+    var calendarEl = document.getElementById('calendar');
+    var calendar = new FullCalendar.Calendar(calendarEl, {
+        initialView: 'dayGridMonth',
+        events: [
+            {
+                title: 'Planerat underhåll',
+                start: '2025-03-15'
+            }
+        ]
+    });
+    calendar.render();
+});

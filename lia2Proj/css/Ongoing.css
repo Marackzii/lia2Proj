@@ -1,4 +1,18 @@
 .flex-container {
   background-color: #fdfdfd;
-  border: 3px solid #ea9216e3;
+  border: 3px solid #f8c621e3;
+}
+
+.lamp-container {
+  display: flex;
+  align-items: center; /* Detta justerar lampan och texten så att de är i linje */
+}
+
+.lamp {
+  width: 15px; /* Justera storleken på lampan */
+  height: 15px;
+  background-color: #f8c621e3; /* Här kan du välja färg på lampan */
+  box-shadow: 0 0 2px 2px #f8c621e3; /* Skugga för lampa-effekt */
+  border-radius: 50%; /* Gör lampan rund */
+  margin-right: 10px; /* Lägger till lite mellanrum mellan lampan och texten */
 }
