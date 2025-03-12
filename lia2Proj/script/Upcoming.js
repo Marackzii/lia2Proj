@@ -1,0 +1,40 @@
+// Funktion för att skapa en ny flex-container
+function addUpcoming() 
+{
+    // Skapa en ny div för flex-container
+    let flexContainer = document.createElement("div");
+    flexContainer.classList.add("flex-container");
+
+    // Skapa en ny div för innehållet i flex-container
+    let contentDiv = document.createElement("div");
+
+    // Slumpmässiga detaljer för problemet
+    let systemName = "DX49KN0";
+    let startTime = "12/3/2025 - 12:00";
+    let issue = "Användare X syns inte i systemet";
+    let actionInProgress = "Inväntar sysadmin login";
+    let expectedResolutionTime = "1-2 veckor";
+    let nextUpdate = "Om 1 vecka";
+    let contact = "John Doe/johndoe@gmail.com/07xxxxxxxx";
+
+    // Lägg till textinnehåll i contentDiv
+    contentDiv.innerHTML = `
+    <strong>Driftstörning - ${systemName}</strong><br>
+    Starttid: ${startTime}<br>
+    Problem: ${issue}<br>
+    Åtgärd pågår: ${actionInProgress}<br>
+    Förväntad lösningstid: ${expectedResolutionTime}<br>
+    Nästa uppdatering: ${nextUpdate}<br>
+    Kontakt: ${contact}
+`;
+
+// Lägg till contentDiv i flexContainer
+flexContainer.appendChild(contentDiv);
+
+// Lägg till den nya flexContainer i en specifik container
+let upcomingContainer = document.querySelector("#upcoming-container");
+upcomingContainer.appendChild(flexContainer);
+}
+
+// Lägg till event listener till knappen för att skapa nya containers vid klick
+document.querySelector("#createUpcomingBtn").addEventListener("click", addUpcoming);

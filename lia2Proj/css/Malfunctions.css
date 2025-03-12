@@ -31,7 +31,7 @@ header {
 /* Footer styling */
 .footer-text {
   color: #fff;
-  position: fixed;
+  position: relative;
   width: 100%;
   bottom: 0;
   line-height: 50px;
@@ -41,6 +41,37 @@ header {
   padding-left: 100px;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #fdfdfd;
+  border: 3px solid #e12a2a;
+  border-radius: 10px;
+  max-width: 400px;
+  margin: 20px auto;
+  margin-bottom: 80px; /* Skapar utrymme så att den inte hamnar bakom footern */
+  padding: 15px;
+}
+
+.flex-container > div {
+  background-color: transparent;
+  text-align: left;
+  font-size: 15px;
+  line-height: 2.0;
+}
+
+.lamp {
+  width: 15px;            /* Storlek på lampan */
+  height: 15px;           /* Storlek på lampan */
+  background-color: #fb0a0a;  /* Lampa färg (gul här, kan ändras) */
+  border-radius: 100%;     /* Gör den rund */
+  box-shadow: 0 0 5px 5px rgb(255, 0, 0); /* Skugga för lampa-effekt */
+  margin-left: auto;
+  margin-right: 20px;
+  margin-top: 10px;
+}
+
 
 @media (min-width: 992px) {
   .navbar-expand-lg .navbar-nav .nav-link {
