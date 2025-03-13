@@ -1,14 +1,21 @@
-.flex-container {
+.flex-container2 {
+  display: flex;
+  flex-direction: column;
   background-color: #fdfdfd;
   border: 3px solid #f8c621e3;
+  border-radius: 10px;
+  max-width: 400px;
+  margin: 20px auto;
+  margin-bottom: 80px; /* Skapar utrymme så att den inte hamnar bakom footern */
+  padding: 15px;
 }
 
-.lamp-container {
+.lamp-container2 {
   display: flex;
   align-items: center; /* Detta justerar lampan och texten så att de är i linje */
 }
 
-.lamp {
+.lamp2 {
   width: 15px; /* Justera storleken på lampan */
   height: 15px;
   background-color: #f8c621e3; /* Här kan du välja färg på lampan */

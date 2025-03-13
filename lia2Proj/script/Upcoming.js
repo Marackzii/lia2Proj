@@ -1,9 +1,11 @@
+'use strict';
+
 // Funktion för att skapa en ny flex-container
 function addUpcoming() 
 {
     // Skapa en ny div för flex-container
     let flexContainer = document.createElement("div");
-    flexContainer.classList.add("flex-container");
+    flexContainer.classList.add("flex-container3");
 
     // Skapa en ny div för innehållet i flex-container
     let contentDiv = document.createElement("div");
@@ -19,11 +21,11 @@ function addUpcoming()
 
     // Skapa lampan
     let lamp = document.createElement("div");
-    lamp.classList.add("lamp");
+    lamp.classList.add("lamp3");
 
     // Lägg till textinnehåll i contentDiv
     contentDiv.innerHTML = `
-    <span class="lamp-container">
+    <span class="lamp-container3">
       ${lamp.outerHTML}
       <strong>Driftstörning - ${systemName}</strong>
     </span><br>    

@@ -42,7 +42,7 @@ header {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-.flex-container {
+.flex-container1 {
   display: flex;
   flex-direction: column;
   background-color: #fdfdfd;
@@ -61,18 +61,51 @@ header {
   line-height: 2.0;
 }
 
-.lamp-container {
+.lamp-container1 {
   display: flex;
   align-items: center; /* Detta justerar lampan och texten så att de är i linje */
 }
 
-.lamp {
+.lamp1 {
   width: 15px; /* Justera storleken på lampan */
   height: 15px;
   background-color: red; /* Här kan du välja färg på lampan */
   box-shadow: 0 0 2px 2px rgb(255, 0, 0); /* Skugga för lampa-effekt */
   border-radius: 50%; /* Gör lampan rund */
   margin-right: 10px; /* Lägger till lite mellanrum mellan lampan och texten */
+}
+
+/* Status indicator styling */
+.status-indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 30px;
+  margin: 30px;
+  font-size: medium;
+}
+
+.status-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.lamp {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.red-lamp {
+  background-color: red;
+  box-shadow: 0 0 2px 2px rgb(255, 0, 0);
+}
+
+.orange-lamp {
+  background-color: #f8c621e3;
+  box-shadow: 0 0 2px 2px #f8c621e3;
 }
 
 @media (min-width: 992px) {

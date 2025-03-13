@@ -1,18 +1,35 @@
-.flex-container {
+.flex-container4 {
+  display: flex;
+  flex-direction: column;
   background-color: #fdfdfd;
   border: 3px solid #36a016;
+  border-radius: 10px;
+  max-width: 400px;
+  margin: 20px auto;
+  margin-bottom: 80px; /* Skapar utrymme så att den inte hamnar bakom footern */
+  padding: 15px;
 }
 
-.lamp-container {
+.lamp-container4 {
   display: flex;
   align-items: center; /* Detta justerar lampan och texten så att de är i linje */
 }
 
-.lamp {
+.lamp4 {
   width: 15px; /* Justera storleken på lampan */
   height: 15px;
   background-color: #36a016; /* Här kan du välja färg på lampan */
   box-shadow: 0 0 2px 2px #36a016; /* Skugga för lampa-effekt */
   border-radius: 50%; /* Gör lampan rund */
   margin-right: 10px; /* Lägger till lite mellanrum mellan lampan och texten */
+  display: inline-block;
+  vertical-align: middle; /* Justerar lampan så att den är i linje med texten */
+}
+
+.table-bordered {
+  border: 2px solid #222; /* Grön border för tabellen */
+}
+
+.table-bordered td {
+  border: 2px solid #36a016; /* Grön border för cellerna */
 }
