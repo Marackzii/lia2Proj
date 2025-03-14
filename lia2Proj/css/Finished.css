@@ -23,8 +23,8 @@ html, body {
 }
 
 .lamp4 {
-  width: 15px; /* Justera storleken på lampan */
-  height: 15px;
+  width: 13px; /* Justera storleken på lampan */
+  height: 13px;
   background-color: #36a016; /* Här kan du välja färg på lampan */
   box-shadow: 0 0 2px 2px #36a016; /* Skugga för lampa-effekt */
   border-radius: 50%; /* Gör lampan rund */

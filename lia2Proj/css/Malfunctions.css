@@ -107,6 +107,27 @@ header {
   box-shadow: 0 0 2px 2px #f8c621e3;
 }
 
+.editBtn {
+  margin-left: 50px;
+  font-size: 12px;
+  height: 40px;
+  padding: 4px 8px;
+  border: none;
+  border-radius: 8px;
+  background-color: #222;
+  color: rgb(252, 242, 242);
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(195, 98, 98, 0.222);
+}
+
+.editBtn:hover {
+  box-shadow: 0 6px 10px rgba(55, 38, 38, 0.205);
+}
+
+.editBtn:active {
+  transform: scale(0.98);
+}
+
 @media (min-width: 992px) {
   .navbar-expand-lg .navbar-nav .nav-link {
     display: block; /* Gör så att alla nav-länkar är synliga */

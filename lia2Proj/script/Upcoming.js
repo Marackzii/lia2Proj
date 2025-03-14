@@ -41,7 +41,7 @@ function addUpcoming()
 flexContainer.appendChild(contentDiv);
 
 // Lägg till den nya flexContainer i en specifik container
-let upcomingContainer = document.querySelector("#upcoming-container");
+let upcomingContainer = document.querySelector(".upcoming-container");
 upcomingContainer.appendChild(flexContainer);
 }
 
@@ -58,8 +58,8 @@ document.addEventListener('DOMContentLoaded', function () {
         initialView: 'dayGridMonth',
         events: [
             {
-                title: 'Planerat underhåll',
-                start: '2025-03-15'
+                title: 'Möte',
+                start: '2025-03-17'
             }
         ]
     });
