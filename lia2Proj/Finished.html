@@ -20,7 +20,6 @@
             </a>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="Malfunctions.html">Driftstörningar</a></li>
-              <!-- <li><a class="dropdown-item" href="Ongoing.html">Pågående underhåll</a></li> -->
               <li><hr class="dropdown-divider"></li>
               <li><a class="dropdown-item" href="Upcoming.html">Planerade underhåll</a></li>
               <li><a class="dropdown-item" href="Finished.html">Avklarade störningar</a></li>
@@ -35,6 +34,27 @@
       <h3>Avklarade störningar</h3>
   </header>
 
+  <!-- Filter för att välja månad -->
+<div class="filter-container">
+  <label for="month-select">Välj månad:</label>
+  <select id="month-select" onchange="filterTableByMonth()">
+      <option value="">Alla månader</option>
+      <option value="Januari">Januari</option>
+      <option value="Februari">Februari</option>
+      <option value="Mars">Mars</option>
+      <option value="April">April</option>
+      <option value="Maj">Maj</option>
+      <option value="Juni">Juni</option>
+      <option value="Juli">Juli</option>
+      <option value="Augusti">Augusti</option>
+      <option value="September">September</option>
+      <option value="Oktober">Oktober</option>
+      <option value="November">November</option>
+      <option value="December">December</option>
+  </select>
+</div>
+
+
 <!-- Table for finished malfunctions -->
 <table class="table table-striped table-bordered">
   <thead>
@@ -43,26 +63,34 @@
       <th scope="col">Starttid</th>
       <th scope="col">Åtgärdat</th>
       <th scope="col">Problem</th>
+      <th scope="col">Månad</th> <!-- Lägg till denna kolumn -->
+
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td class="table-id-column"><span class="lamp4"></span><a href="details/DX49KN0.html">DX49KN0</a></td>
+      <td class="table-id-column"><span class="lamp4"></span><a href="Malfunctions.html">DX49KN0</a></td>
       <td>12/3/2025 - 12:00</td>
       <td>12/3/2025 - 18:00</td>
       <td>Användare X syntes inte i systemet</td>
+      <td class="month-column"></td> <!-- Månadscellen här -->
+
     </tr>
     <tr>
-      <td class="table-id-column"><span class="lamp4"></span><a href="details/DX49KN0.html">DX49KN0</a></td>
+      <td class="table-id-column"><span class="lamp4"></span><a href="Malfunctions.html">DX49KN0</a></td>
       <td>12/3/2025 - 12:00</td>
       <td>12/3/2025 - 18:00</td>
       <td>Användare X syntes inte i systemet</td>
+      <td class="month-column"></td> <!-- Månadscellen här -->
+
     </tr>
     <tr>
-      <td class="table-id-column"><span class="lamp4"></span><a href="details/DX49KN0.html">DX49KN0</a></td>
+      <td class="table-id-column"><span class="lamp4"></span><a href="Malfunctions.html">DX49KN0</a></td>
       <td>12/3/2025 - 12:00</td>
       <td>12/3/2025 - 18:00</td>
       <td>Användare X syntes inte i systemet</td>
+      <td class="month-column"></td> <!-- Månadscellen här -->
+
     </tr>
     <!-- Lägg till fler rader här för andra störningar -->
   </tbody>

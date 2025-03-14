@@ -44,3 +44,23 @@ html, body {
 footer {
   margin-top: auto;
 }
+
+/* Styling för kalendern (dropdown-menyn) */
+#month-select {
+  font-size: 16px;
+  padding: 8px 15px;
+  border: 2px solid #222; /* Grön border som matchar tabellen */
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  color: #333;
+  transition: all 0.3s ease;
+  width: 150px;
+  margin: 10px 0;
+  cursor: pointer;
+}
+
+/* Styling för filter-container */
+.filter-container {
+  text-align: center;
+  margin: 20px 0;
+}
