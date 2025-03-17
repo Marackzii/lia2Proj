@@ -1,102 +1,59 @@
 'use strict';
 
 document.addEventListener("DOMContentLoaded", function () {
-    const editBtn = document.querySelector(".editBtn");
-    const flexContainer = document.querySelector(".flex-container1");
-
-    editBtn.addEventListener("click", function () {
-        // Hämta den befintliga texten från flex-container och dela upp den i rader
-        let textLines = flexContainer.innerHTML.split("<br>");
-
-        // Töm flex-container innan vi lägger till de redigerbara fälten
-        flexContainer.innerHTML = "";
+    // Funktion för att visa redigeringsformuläret
+    function showEditForm(event) {
+        const flexContainer = event.target.closest('.flex-container1');
+        const title = flexContainer.querySelector('strong').textContent.replace('Driftstörning - ', '');
+        const starttid = flexContainer.querySelector('.starttid').textContent.replace('Starttid: ', '');
+        const problem = flexContainer.querySelector('.problem').textContent.replace('Problem: ', '');
+        const atgard = flexContainer.querySelector('.atgard').textContent.replace('Åtgärd pågår: ', '');
+        const losningstid = flexContainer.querySelector('.losningstid').textContent.replace('Förväntad lösningstid: ', '');
+        const uppdatering = flexContainer.querySelector('.uppdatering').textContent.replace('Nästa uppdatering: ', '');
+        const kontakt = flexContainer.querySelector('.kontakt').textContent.replace('Kontakt: ', '');
 
         // Skapa input-fält för varje rad i texten
-        textLines.forEach(line => {
-            let inputFieldContainer = document.createElement("div");
-
-            // Kontrollera om raden innehåller någon av de fält som inte ska vara redigerbara
-            const nonEditableFields = [
-                "Starttid:",
-                "Problem:",
-                "Åtgärd pågår:",
-                "Förväntad lösningstid:",
-                "Nästa uppdatering:",
-                "Kontakt:"
-            ];
-
-            let isEditable = true;
-
-            // Kontrollera om raden innehåller någon av de fält som inte ska vara redigerbara
-            nonEditableFields.forEach(field => {
-                if (line.includes(field)) {
-                    isEditable = false;
-                }
-            });
-
-            if (isEditable) {
-                // Om raden ska vara redigerbar, skapa ett input-fält för värdet
-                let inputField = document.createElement("input");
-                inputField.type = "text";
-                inputField.value = line.trim().replace(/^.*?:\s*/, ""); // Ta bort etiketten från input-fältet
-                inputField.style.width = "100%";
-                inputField.style.marginBottom = "10px";
-                inputField.style.padding = "5px";
-                
-                // Lägg till input-fältet i containern
-                inputFieldContainer.appendChild(inputField);
-            } else {
-                // Om raden inte ska vara redigerbar, skapa en vanlig div med en etikett
-                let div = document.createElement("div");
-                div.textContent = line.trim(); // Lägg till radens text (etikett + värde)
-                div.style.marginBottom = "10px"; // Ge lite mellanrum mellan fälten
-                inputFieldContainer.appendChild(div);
-            }
-
-            flexContainer.appendChild(inputFieldContainer);
-        });
+        flexContainer.querySelector('strong').innerHTML = `Driftstörning - <input type="text" value="${title}" class="edit-input">`;
+        flexContainer.querySelector('.starttid').innerHTML = `Starttid: <input type="text" value="${starttid}" class="edit-input">`;
+        flexContainer.querySelector('.problem').innerHTML = `Problem: <input type="text" value="${problem}" class="edit-input">`;
+        flexContainer.querySelector('.atgard').innerHTML = `Åtgärd pågår: <input type="text" value="${atgard}" class="edit-input">`;
+        flexContainer.querySelector('.losningstid').innerHTML = `Förväntad lösningstid: <input type="text" value="${losningstid}" class="edit-input">`;
+        flexContainer.querySelector('.uppdatering').innerHTML = `Nästa uppdatering: <input type="text" value="${uppdatering}" class="edit-input">`;
+        flexContainer.querySelector('.kontakt').innerHTML = `Kontakt: <input type="text" value="${kontakt}" class="edit-input">`;
 
         // Skapa en spara-knapp
         let saveBtn = document.createElement("button");
         saveBtn.textContent = "Spara";
-        saveBtn.style.marginTop = "10px";
-        saveBtn.style.padding = "5px 10px";
-        saveBtn.style.backgroundColor = "#222";
-        saveBtn.style.color = "#fff";
-        saveBtn.style.border = "none";
-        saveBtn.style.borderRadius = "5px";
-        saveBtn.style.cursor = "pointer";
+        saveBtn.classList.add("saveBtn");
         flexContainer.appendChild(saveBtn);
 
         // Lyssna på klick på spara-knappen
         saveBtn.addEventListener("click", function () {
-            let updatedText = "";
-            let allFilled = true;
-            
-            // Gå igenom alla input-fält och skapa den nya texten
-            Array.from(flexContainer.querySelectorAll("input")).forEach(input => {
-                if (input.value.trim() === "") {
-                    allFilled = false; // Om något fält är tomt, sätt allFilled till false
-                }
-                updatedText += input.value.trim() + "<br>"; // Lägg till den nya texten
-            });
+            // Hämta de nya värdena från input-fälten
+            const newTitle = flexContainer.querySelector('strong input').value;
+            const newStarttid = flexContainer.querySelector('.starttid input').value;
+            const newProblem = flexContainer.querySelector('.problem input').value;
+            const newAtgard = flexContainer.querySelector('.atgard input').value;
+            const newLosningstid = flexContainer.querySelector('.losningstid input').value;
+            const newUppdatering = flexContainer.querySelector('.uppdatering input').value;
+            const newKontakt = flexContainer.querySelector('.kontakt input').value;
 
-            // Om alla fält är ifyllda, spara ändringarna
-            if (allFilled) {
-                flexContainer.innerHTML = updatedText.trim(); // Uppdatera texten i flex-container
+            // Uppdatera texten i flex-container med de nya värdena
+            flexContainer.querySelector('strong').textContent = 'Driftstörning - ' + newTitle;
+            flexContainer.querySelector('.starttid').textContent = 'Starttid: ' + newStarttid;
+            flexContainer.querySelector('.problem').textContent = 'Problem: ' + newProblem;
+            flexContainer.querySelector('.atgard').textContent = 'Åtgärd pågår: ' + newAtgard;
+            flexContainer.querySelector('.losningstid').textContent = 'Förväntad lösningstid: ' + newLosningstid;
+            flexContainer.querySelector('.uppdatering').textContent = 'Nästa uppdatering: ' + newUppdatering;
+            flexContainer.querySelector('.kontakt').textContent = 'Kontakt: ' + newKontakt;
 
-                // Lägg tillbaka redigeringsknappen
-                let newEditBtn = document.createElement("button");
-                newEditBtn.textContent = "Redigera";
-                newEditBtn.classList.add("editBtn");
-                newEditBtn.style.marginTop = "10px";
-                flexContainer.appendChild(newEditBtn);
-
-                // Lägg till en event listener på den nya redigeringsknappen
-                newEditBtn.addEventListener("click", arguments.callee);
-            } else {
-                alert("Alla fält måste fyllas i!"); // Om något fält är tomt, visa ett meddelande
-            }
+            // Ta bort spara-knappen
+            saveBtn.remove();
         });
+    }
+
+    // Lägg till event listener till redigeringsknapparna
+    document.querySelectorAll('.editBtn').forEach(button => {
+        button.addEventListener('click', showEditForm);
     });
 });
