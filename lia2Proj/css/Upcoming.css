@@ -50,8 +50,8 @@ body {
   border: 3px solid #33106e;
 }
 
-#calendar {
+#datepicker {
   float: left;
-  font-size: small;
-  padding-left: 20px;
+  font-size: medium;
+  margin-left: 50px;
 }

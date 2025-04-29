@@ -1,10 +1,15 @@
 body {
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family: "Telge Sans", Helvetica, Arial;
 }
 
 .navbar a {
   font-size: 20px;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: "Telge Sans", Helvetica, Arial;
+}
+
+/* Navbar title styling */
+.bg-body-tertiary {
+  background-color: #bbd197 !important;
 }
 
 .dropdown-menu a {
@@ -13,8 +18,10 @@ body {
 
 /* Header styling */
 header {
-  text-align: center;
+  text-align: left;
+  margin-left: 20vh;
   padding: 20px;
+  font-family: "Telge Sans", Helvetica, Arial;
 }
 
 /* Alert box */
@@ -33,31 +40,57 @@ header {
   position: relative;
   width: 100%;
   bottom: 0;
-  line-height: 50px;
   background-color: #222;
   font-size: x-large;
   margin: auto;
+  padding: 10px;
   padding-left: 100px;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: "Telge Sans", Helvetica, Arial;
 }
 
-.flex-container1 {
-  display: flex;
-  flex-direction: column;
-  background-color: #fdfdfd;
-  border: 3px solid #e12a2a;
-  border-radius: 10px;
-  max-width: 400px;
-  margin: 20px auto;
-  margin-bottom: 80px; /* Skapar utrymme så att den inte hamnar bakom footern */
-  padding: 15px;
-}
-
-.flex-container > div {
-  background-color: transparent;
+h3 {
+  padding-top: 10px;
+  font-family: "Telge Sans", Helvetica, Arial;
+  font-size: x-large;
   text-align: left;
-  font-size: 15px;
+}
+
+.flex-wrapper1 {
+  display: flex;
+  flex-wrap: wrap; /* Om du vill att de radbryts om det blir trångt */
+  justify-content: center;
+  gap: 50px; /* Avstånd mellan boxarna */
+  padding-bottom: 10px;
+  margin-bottom: 30px;
+}
+
+.flex-item1 {
+  background-color: #fafafa;
+  border: 3px solid #e12a2a;
+  border-radius: 40px;
+  padding: 20px;
+  font-family: "Telge Sans", Helvetica, Arial;
+  transition: all 0.3s ease; /* Gör alla förändringar smidiga */
+  opacity: 1;
+  overflow: hidden;
+}
+
+/* När elementet är kollapsat */
+.flex-item1.collapsed {
+  opacity: 0;
+  max-height: 0; /* Gör så att höjden minskar till 0 */
+}
+
+/* För att ge en snygg effekt på collapsebar */
+.redcollapsebar {
+  transition: transform 0.3s ease;
+}
+
+.flex-wrapper1 > div {
+  background-color: #fffcfc;
+  text-align: left;
   line-height: 2.0;
+  font-size: small;
 }
 
 .lamp-container1 {
@@ -80,14 +113,22 @@ header {
   flex-direction: column;
   align-items: flex-start;
   padding: 30px;
-  margin: 30px;
+  margin-left: 10vh;
   font-size: medium;
 }
 
-.status-item {
+.status-item1 {
   display: flex;
   align-items: center;
   margin-bottom: 10px;
+  margin-left: 50px;
+}
+
+.status-item2 {
+  display: flex;
+  align-items: center;
+  margin: 30px;
+  margin-left: 150px;
 }
 
 .lamp {
@@ -114,8 +155,8 @@ header {
   padding: 4px 8px;
   border: none;
   border-radius: 8px;
-  background-color: #222;
-  color: rgb(252, 242, 242);
+  background-color: #bbd197;
+  color: rgb(0, 0, 0);
   cursor: pointer;
   box-shadow: 0 4px 6px rgba(195, 98, 98, 0.222);
 }
@@ -135,17 +176,17 @@ header {
   z-index: 1;
   top: 0;
   right: 0;
-  background-color: #111;
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 60px;
+  background-color: #bbd197;
 }
 
 .sidebar a {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
   font-size: 25px;
-  color: #818181;
+  color: black;
   display: block;
   transition: 0.3s;
 }
@@ -165,37 +206,54 @@ header {
 .openbtn {
   font-size: small;
   cursor: pointer;
-  background-color: #111;
-  color: white;
+  background-color: #bbd197;
+  color: rgb(0, 0, 0);
   padding: 10px 15px;
   border: none;
-  position: fixed;
+  position: absolute;
   right: 20px; /* Ändra från left till right */
+  margin-top: 20px;
 }
 
 .openbtn:hover {
-  background-color: #444;
+  background-color: #dde8cb;
 }
 
-#main {
-  transition: margin-right .5s;
-  padding: 16px;
+.navbar a, .navbar a.active {
+  /* Länkar i navbaren */
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+  padding-bottom: 4px;
+  font-size: 20px;
+  font-family: "Telge Sans", Helvetica, Arial;
 }
 
-/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-@media screen and (max-height: 450px) {
-  .sidebar {padding-top: 15px;}
-  .sidebar a {font-size: 18px;}
+.navbar a:hover, .navbar a.active:hover {
+  /* När musen är över länken eller den är aktiv, ändra färg */
+  color: #4f593b;
 }
 
-@media (min-width: 992px) {
-  .navbar-expand-lg .navbar-nav .nav-link {
-    display: block; /* Gör så att alla nav-länkar är synliga */
-  }
+.navbar a::after, .navbar a.active::after {
+  /* Skapa en linje under länken */
+  content: '';
+  position: absolute;
+  height: 2px;
+  width: 0;
+  left: 50%;
+  bottom: 0;
+  background-color: black; 
+  transition: width 0.3s ease, left 0.3s ease;
 }
 
-@media (max-width: 992px) {
-  .navbar-expand-lg .navbar-collapse {
-    display: block !important; /* Gör navbaren alltid synlig på små skärmar */
-  }
+.navbar a:hover::after, .navbar a.active:hover::after {
+  /* När musen är över länken eller den är aktiv, ändra bredd och position */
+  width: 100%;
+  left: 0;
+}
+
+#redtoggleCollapse {
+  padding: 4px 8px;
+  background-color: white;
+  border: none;
 }

@@ -47,21 +47,3 @@ upcomingContainer.appendChild(flexContainer);
 
 // Lägg till event listener till knappen för att skapa nya containers vid klick
 document.querySelector("#createUpcomingBtn").addEventListener("click", addUpcoming);
-
-// Lägg till event listener till knappen
-document.querySelector("#createUpcomingBtn").addEventListener("click", addUpcoming);
-
-// FullCalendar-initiering
-document.addEventListener('DOMContentLoaded', function () {
-    var calendarEl = document.getElementById('calendar');
-    var calendar = new FullCalendar.Calendar(calendarEl, {
-        initialView: 'dayGridMonth',
-        events: [
-            {
-                title: 'Möte',
-                start: '2025-03-17'
-            }
-        ]
-    });
-    calendar.render();
-});
