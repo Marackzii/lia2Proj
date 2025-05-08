@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("lia2Proj")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f2183737d4bf38afcba76d6d3bfd4fafb47bbfca")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+025c18c97abcf831652339a67bdb11c6dc6c7ae7")]
 [assembly: System.Reflection.AssemblyProductAttribute("lia2Proj")]
 [assembly: System.Reflection.AssemblyTitleAttribute("lia2Proj")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

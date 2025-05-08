@@ -9,7 +9,7 @@ html, body {
   display: flex;
   flex-direction: column;
   background-color: #fdfdfd;
-  border: 3px solid #36a016;
+  border: 3px solid #bbd197;
   border-radius: 10px;
   max-width: 400px;
   margin: 20px auto;
@@ -33,12 +33,48 @@ html, body {
   vertical-align: middle; /* Justerar lampan så att den är i linje med texten */
 }
 
-.table-bordered {
-  border: 2px solid #222; /* Grön border för tabellen */
+table.table {
+  display: table !important;
+  width: 80% !important; /* Viktigt: lägg till !important */
+  margin: auto; /* Centrerar tabellen med */
+  overflow: visible;
+  background-color: #f9f9f9;
+}
+
+.table th,
+.table td {
+  padding: 12px 16px;
+  text-align: center;
+}
+
+.table th {
+  background-color: #bbd197; /* Ljusgrön rubrikrad */
+  color: black;
+  font-weight: normal; /* Ta bort fetstil */
 }
 
 .table-bordered td {
-  border: 2px solid #36a016; /* Grön border för cellerna */
+  border: none; /* Undvik dubbla borders – vi använder bara yttre */
+}
+
+.table tbody tr:nth-child(even) {
+  background-color: #f9f9f9; /* Zebraeffekt */
+}
+
+.table tbody tr {
+  transition: all 0.3s ease; /* Mjuk övergång */
+}
+
+.table tbody tr:hover {
+  transform: scale(1.01); /* Lätt förstoring */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Mjuk skugga vid hover */
+  z-index: 1;
+  position: relative;
+  background-color: white;
+}
+
+.table>:not(caption)>*>* {
+  box-shadow: none !important;
 }
 
 footer {
@@ -49,18 +85,42 @@ footer {
 #month-select {
   font-size: 16px;
   padding: 8px 15px;
-  border: 2px solid #222; /* Grön border som matchar tabellen */
-  border-radius: 5px;
-  background-color: #f9f9f9;
-  color: #333;
+  border-radius: 8px;
+  background-color: #ffffff;
+  color: black;
   transition: all 0.3s ease;
   width: 150px;
   margin: 10px 0;
   cursor: pointer;
+  font-size: small;
 }
 
 /* Styling för filter-container */
 .filter-container {
   text-align: center;
   margin: 20px 0;
+  font-size: small;
+}
+
+#month-select:hover {
+  transition: 0.3s ease; /* Smidig övergång vid hover */
+  box-shadow: 0 6px 10px rgba(195, 189, 189, 0.205);
+  background-color: #f9f9f9;
+  border: 1px solid black;
+}
+
+/* Popup med mer info, dold som standard */
+.popup-table {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  width: 250px;
+  font-size: 0.85rem;
+  z-index: 10;
 }

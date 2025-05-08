@@ -17,6 +17,7 @@
   opacity: 1;
   overflow: hidden;
   font-size: small;
+  line-height: 2.0;
 }
 
 .lamp-container2 {
@@ -33,6 +34,19 @@
   box-shadow: 0 0 2px 2px #f8c621e3; /* Skugga för lampa-effekt */
   border-radius: 50%; /* Gör lampan rund */
   margin-right: 10px; /* Lägger till lite mellanrum mellan lampan och texten */
+}
+
+.status-item2 {
+  display: flex;
+  align-items: center;
+  margin: 30px;
+  margin-left: 50px;
+}
+
+/* När elementet är kollapsat */
+.flex-item2.collapsed {
+  opacity: 0;
+  max-height: 0; /* Gör så att höjden minskar till 0 */
 }
 
 .orangecollapsebar {

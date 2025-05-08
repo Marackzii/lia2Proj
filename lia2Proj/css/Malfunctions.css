@@ -24,16 +24,6 @@ header {
   font-family: "Telge Sans", Helvetica, Arial;
 }
 
-/* Alert box */
-#driftBox {
-  max-width: 600px;
-  margin: 20px auto;
-  padding: 15px;
-  background-color: #cce5ff;
-  border: 1px solid #b8daff;
-  border-radius: 5px;
-}
-
 /* Footer styling */
 .footer-text {
   color: #fff;
@@ -49,10 +39,9 @@ header {
 }
 
 h3 {
-  padding-top: 10px;
+  padding-top: 8px;
   font-family: "Telge Sans", Helvetica, Arial;
-  font-size: x-large;
-  text-align: left;
+  margin: 0px;
 }
 
 .flex-wrapper1 {
@@ -84,6 +73,12 @@ h3 {
 /* För att ge en snygg effekt på collapsebar */
 .redcollapsebar {
   transition: transform 0.3s ease;
+}
+
+#redtoggleCollapse {
+  padding: 4px 8px;
+  background-color: white;
+  border: none;
 }
 
 .flex-wrapper1 > div {
@@ -122,13 +117,6 @@ h3 {
   align-items: center;
   margin-bottom: 10px;
   margin-left: 50px;
-}
-
-.status-item2 {
-  display: flex;
-  align-items: center;
-  margin: 30px;
-  margin-left: 150px;
 }
 
 .lamp {
@@ -252,8 +240,12 @@ h3 {
   left: 0;
 }
 
-#redtoggleCollapse {
-  padding: 4px 8px;
-  background-color: white;
-  border: none;
+.saveBtn {
+  font-size: 12px;
+  padding: 6px 12px;
+  border-radius: 8px;
+}
+
+.edit-input {
+  margin: 3px;
 }

@@ -7,38 +7,36 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="./css/Malfunctions.css"/>
     <link rel="stylesheet" href="./css/Finished.css"/>
+    <link rel="stylesheet" href="./css/telgeFont.css"/>
 </head>
 <body>
+<!-- Navbar section -->
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="Malfunctions.html">Telge driftstatussida</a>
-      <div class="collapse navbar-collapse" id="navbarScroll">
-        <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll">
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Val
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="Malfunctions.html">Driftstörningar</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="Upcoming.html">Planerade underhåll</a></li>
-              <li><a class="dropdown-item" href="Finished.html">Avklarade störningar</a></li>
-            </ul>
-          </li>
-        </ul>
-      </div>
+  <div class="container-fluid">
+    <a class="navbar-brand" href="Malfunctions.html">Telge driftstatus</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="Malfunctions.html">Driftstörningar</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Upcoming.html">Planerade underhåll</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Finished.html">Avklarade störningar</a>
+        </li>
+      </ul>
     </div>
+  </div>
 </nav>
 
-  <header>
-      <h3>Avklarade störningar</h3>
-  </header>
-
-  <!-- Filter för att välja månad -->
+<!-- Filter för att välja månad -->
 <div class="filter-container">
-  <label for="month-select">Välj månad:</label>
-  <select id="month-select" onchange="filterTableByMonth()">
-      <option value="">Alla månader</option>
+  <select id="month-select">
+    <option value="">Välj månad:</option>
       <option value="Januari">Januari</option>
       <option value="Februari">Februari</option>
       <option value="Mars">Mars</option>
@@ -54,43 +52,70 @@
   </select>
 </div>
 
-
 <!-- Table for finished malfunctions -->
 <table class="table table-striped table-bordered">
   <thead>
     <tr>
       <th scope="col">ID</th>
-      <th scope="col">Starttid</th>
-      <th scope="col">Åtgärdat</th>
-      <th scope="col">Problem</th>
-      <th scope="col">Månad</th> <!-- Lägg till denna kolumn -->
-
+      <th scope="col">STARTTID</th>
+      <th scope="col">ÅTGÄRDAT</th>
+      <th scope="col">PROBLEM</th>
+      <th scope="col">MÅNAD</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td class="table-id-column"><span class="lamp4"></span><a href="Malfunctions.html">DX49KN0</a></td>
+      <td class="table-id-column">
+        <div class="popup-wrapper">
+        <span class="lamp4"></span>
+        <a href="" class="hover-link">DX49KN0</a>
+        <!-- Popup div med mer information -->
+        <div class="popup-table">
+          <strong>Beskrivning:</strong> Gällde användare John Doe.<br>
+          <strong>Anledning:</strong> Bugg uppstod efter senaste pushad git. Användare råkade registreras 2 gånger.<br>
+          <strong>Incident-ID:</strong> ABC123.<br>
+          <strong>Kontaktperson:</strong> Jane Doe.<br>
+        </div>
+        </div>
+      </td>
       <td>12/3/2025 - 12:00</td>
       <td>12/3/2025 - 18:00</td>
       <td>Användare X syntes inte i systemet</td>
-      <td class="month-column"></td> <!-- Månadscellen här -->
-
+      <td class="month-column"></td>
     </tr>
     <tr>
-      <td class="table-id-column"><span class="lamp4"></span><a href="Malfunctions.html">DX49KN0</a></td>
+      <td class="table-id-column">
+        <span class="lamp4"></span>
+        <a href="" class="hover-link">DX49KN0</a>
+        <!-- Popup div med mer information -->
+        <div class="popup-table">
+          <strong>Beskrivning:</strong> Gällde användare John Doe.<br>
+          <strong>Anledning:</strong> Bugg uppstod efter senaste pushad git. Användare råkade registreras 2 gånger.<br>
+          <strong>Incident-ID:</strong> ABC123.<br>
+          <strong>Kontaktperson:</strong> Jane Doe.<br>
+        </div>
+      </td>
       <td>12/3/2025 - 12:00</td>
       <td>12/3/2025 - 18:00</td>
       <td>Användare X syntes inte i systemet</td>
-      <td class="month-column"></td> <!-- Månadscellen här -->
-
+      <td class="month-column"></td>
     </tr>
     <tr>
-      <td class="table-id-column"><span class="lamp4"></span><a href="Malfunctions.html">DX49KN0</a></td>
+      <td class="table-id-column">
+        <span class="lamp4"></span>
+        <a href="" class="hover-link">DX49KN0</a>
+        <!-- Popup div med mer information -->
+        <div class="popup-table">
+          <strong>Beskrivning:</strong> Gällde användare John Doe.<br>
+          <strong>Anledning:</strong> Bugg uppstod efter senaste pushad git. Användare råkade registreras 2 gånger.<br>
+          <strong>Incident-ID:</strong> ABC123.<br>
+          <strong>Kontaktperson:</strong> Jane Doe.<br>
+        </div>
+      </td>
       <td>12/3/2025 - 12:00</td>
       <td>12/3/2025 - 18:00</td>
       <td>Användare X syntes inte i systemet</td>
-      <td class="month-column"></td> <!-- Månadscellen här -->
-
+      <td class="month-column"></td>
     </tr>
     <!-- Lägg till fler rader här för andra störningar -->
   </tbody>

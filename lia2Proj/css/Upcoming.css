@@ -10,48 +10,94 @@ body {
 .lamp3 {
   width: 15px; /* Justera storleken på lampan */
   height: 15px;
-  background-color: #33106e; /* Här kan du välja färg på lampan */
-  box-shadow: 0 0 2px 2px #33106e; /* Skugga för lampa-effekt */
+  background-color: #2b6b88; /* Här kan du välja färg på lampan */
+  box-shadow: 0 0 2px 2px #2b6b88; /* Skugga för lampa-effekt */
   border-radius: 50%; /* Gör lampan rund */
   margin-right: 10px; /* Lägger till lite mellanrum mellan lampan och texten */
 }
 
 .flex-container3 {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap; /* Om du vill att de radbryts om det blir trångt */
+  justify-content: center;
+  gap: 50px;
   background-color: #fdfdfd;
-  border: 3px solid #33106e;
-  border-radius: 10px;
+  border: 3px solid #2b6b88;
+  border-radius: 40px;
   max-width: 400px;
-  margin: 20px auto;
-  margin-bottom: 80px; /* Skapar utrymme så att den inte hamnar bakom footern */
-  padding: 15px;
+  margin: 30px;
+  padding: 20px;
+  font-family: "Telge Sans", Helvetica, Arial;
+  transition: all 0.3s ease; /* Gör alla förändringar smidiga */
+  opacity: 1;
+  overflow: hidden;
+  box-sizing: border-box; /* Inkludera padding och border i elementets totala bredd och höjd */
+  margin-bottom: 50px; /* VIKTIG: Denna skapar mellanrum mellan footern och containerna men skapar också större gap mellan varje container */
 }
 
 #createUpcomingBtn {
-  background-color: #33106e; 
-  color: white; 
+  display: block; /* Gör knappen till ett blockelement */
+  background-color: #bbd197;
+  margin-top: 20px;
+  color: black; 
   border: none; /* Ta bort standardkanterna */
   border-radius: 5px; /* Rundade hörn */
-  padding: 10px 10px; /* Lite inre marginal */
-  font-size: 16px; 
+  padding: 10px 20px; /* Justera inre marginal för att undvika att knappen förstoras */
+  font-size: small; 
   cursor: pointer; /* Gör att markören blir en pekare när man hovrar över */
-  transition: background-color 0.3s ease; /* Smidig övergång vid hover */
-  font-size: small;
-  margin-left: 180vh;
+  position:sticky ;
 }
 
 #createUpcomingBtn:hover {
-  background-color: #260b54; /* Mörkare blå när man hovrar */
+  transition: 0.3s ease; /* Smidig övergång vid hover */
+  box-shadow: 0 6px 10px rgba(55, 38, 38, 0.205);
+  background-color: rgba(221, 232, 203);
 }
 
-.flex-container {
-  background-color: #fdfdfd;
-  border: 3px solid #33106e;
+#createUpcomingBtn:active {
+  transform: scale(0.98);
+}
+
+.upcoming-container {
+  display: flex;
+  flex-wrap: wrap; /* Tillåt radbrytning om det blir för trångt */
+  justify-content: center; /* Centrerar innehållet horisontellt */
+  gap: 20px; /* Skapar mellanrum mellan containrarna */
+  padding: 20px; /* Lägg till lite inre marginal */
+  align-items: center; /* Centrerar innehållet horisontellt */
+  position: relative;
+  box-sizing: border-box; /* Inkludera padding i bredden */
 }
 
 #datepicker {
   float: left;
   font-size: medium;
   margin-left: 50px;
+  margin-top: 30px;
+  margin-right: 425px;
+}
+
+h3 {
+  padding-top: 8px;
+  font-family: "Telge Sans", Helvetica, Arial;
+  margin: 0px;
+}
+
+.flex-container3 > div {
+  background-color: #fffcfc;
+  text-align: left;
+  line-height: 2.0;
+  font-size: small;
+  position: relative; /* Gör det möjligt att positionera barn absolut */
+}
+
+.saveBtn {
+  margin-left: 3px; /* Skapar utrymme till höger om kontaktfältet */
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+
+.footer-text {
+  position: fixed; /*VIKTIG: Hitta en lösning utan pos fixed för det är den enda som inte sätter footern i mitten på sidan*/
 }

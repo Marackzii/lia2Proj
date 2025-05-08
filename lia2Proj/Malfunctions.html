@@ -5,16 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Malfunctions</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="./css/Ongoing.css"/>
     <link rel="stylesheet" href="./css/Malfunctions.css"/>
+    <link rel="stylesheet" href="./css/Ongoing.css"/>
     <link rel="stylesheet" href="./css/telgeFont.css"/>
     
 </head>
 <body>
 
+  <!-- Navbar section -->
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-      <h3>Telge Driftstatus</h3>
+    <a class="navbar-brand" href="Malfunctions.html">Telge driftstatus</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -34,37 +35,34 @@
   </div>
 </nav>
 
-<!-- <header>
-    <h3>Driftstörningar</h3>
-</header> -->
-
 <!-- Sidepanel section -->
 <div id="mySidebar" class="sidebar">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+  <a href="javascript:void(0)" class="closebtn" id="closebtn">×</a>
   <a href="#">Mail</a>
   <a href="#">Teams</a>
 </div>
 <div id="main">
-  <button class="openbtn" onclick="openNav()">☰ Skicka via...</button>  
+  <button class="openbtn" id="openbtn">☰ Skicka via...</button>  
 </div>
 
 <!-- Status indicator section -->
-<div class="status-item2">
-  <div id="orangecollapsebar" class="orangecollapsebar">
-    <button id="orangetoggleCollapse">☰</button>
+<div class="status-indicator">
+  <div class="status-item2">
+    <div id="orangecollapsebar" class="orangecollapsebar">
+      <button id="orangetoggleCollapse">☰</button>
+    </div>
+    <div class="lamp orange-lamp"></div>
+    <span>Pågående underhåll</span>
   </div>
-  <div class="lamp orange-lamp"></div>
-  <span>Pågående underhåll</span>
-</div>
 </div>
 
-<div id="main-content" class="main-content">
+<div id="main-content2" class="main-content2">
 <!-- Ongoing maintenance section -->
 <div class="flex-wrapper2">
   <div class="flex-item2">
     <span class="lamp-container2">
       <div class="lamp2"></div>
-      <strong>Driftstörning - DX49KN0</strong>
+      <strong>Driftstörning - XXXXX</strong>
       <button class="editBtn">Redigera</button>
     </span><br>
     <span class="starttid">Starttid: 12/3/2025 - 12:00</span><br>
@@ -78,7 +76,7 @@
   <div class="flex-item2">
     <span class="lamp-container2">
       <div class="lamp2"></div>
-      <strong>Driftstörning - DX49KN1</strong>
+      <strong>Driftstörning - YYYYY</strong>
       <button class="editBtn">Redigera</button>
     </span><br>
     <span class="starttid">Starttid: 13/3/2025 - 14:00</span><br>
@@ -89,6 +87,8 @@
     <span class="kontakt">Kontakt: Jane Doe/janedoe@gmail.com/07yyyyyyyy</span>
   </div>
 </div>
+</div>
+
 
 <!-- Status indicator section -->
 <div class="status-indicator">
@@ -101,13 +101,13 @@
   </div>
 </div>
 
-<div id="main-content" class="main-content">
+<div id="main-content1" class="main-content1">
 <!-- Malfunction section -->
 <div class="flex-wrapper1">
   <div class="flex-item1">
     <span class="lamp-container1">
       <div class="lamp1"></div>
-      <strong>Driftstörning - DX49KN0</strong>
+      <strong>Driftstörning - XXXXX</strong>
       <button class="editBtn">Redigera</button>
     </span><br>
     <span class="starttid">Starttid: 12/3/2025 - 12:00</span><br>
@@ -121,7 +121,35 @@
   <div class="flex-item1">
     <span class="lamp-container1">
       <div class="lamp1"></div>
-      <strong>Driftstörning - DX49KN0</strong>
+      <strong>Driftstörning - YYYYY</strong>
+      <button class="editBtn">Redigera</button>
+    </span><br>
+    <span class="starttid">Starttid: 13/3/2025 - 14:00</span><br>
+    <span class="problem">Problem: Användare Y kan inte logga in</span><br>
+    <span class="atgard">Åtgärd pågår: Omstart av server</span><br>
+    <span class="losningstid">Förväntad lösningstid: 1 dag</span><br>
+    <span class="uppdatering">Nästa uppdatering: Om 2 timmar</span><br>
+    <span class="kontakt">Kontakt: Jane Doe/janedoe@gmail.com/07yyyyyyyy</span>
+  </div>
+  
+  <div class="flex-item1">
+    <span class="lamp-container1">
+      <div class="lamp1"></div>
+      <strong>Driftstörning - ZZZZZ</strong>
+      <button class="editBtn">Redigera</button>
+    </span><br>
+    <span class="starttid">Starttid: 14/3/2025 - 16:00</span><br>
+    <span class="problem">Problem: Användare Z har inte behörighet</span><br>
+    <span class="atgard">Åtgärd pågår: Uppdatering av databas</span><br>
+    <span class="losningstid">Förväntad lösningstid: 3 dagar</span><br>
+    <span class="uppdatering">Nästa uppdatering: Om 1 månad</span><br>
+    <span class="kontakt">Kontakt: Anonymous/anonymous@gmail.com/07zzzzzzzz</span>
+  </div>
+  
+  <div class="flex-item1">
+    <span class="lamp-container1">
+      <div class="lamp1"></div>
+      <strong>Driftstörning - XXXXX</strong>
       <button class="editBtn">Redigera</button>
     </span><br>
     <span class="starttid">Starttid: 12/3/2025 - 12:00</span><br>
@@ -135,57 +163,29 @@
   <div class="flex-item1">
     <span class="lamp-container1">
       <div class="lamp1"></div>
-      <strong>Driftstörning - DX49KN0</strong>
+      <strong>Driftstörning - YYYYY</strong>
       <button class="editBtn">Redigera</button>
     </span><br>
-    <span class="starttid">Starttid: 12/3/2025 - 12:00</span><br>
-    <span class="problem">Problem: Användare X syns inte i systemet</span><br>
-    <span class="atgard">Åtgärd pågår: Inväntar sysadmin login</span><br>
-    <span class="losningstid">Förväntad lösningstid: 1-2 veckor</span><br>
-    <span class="uppdatering">Nästa uppdatering: Om 1 vecka</span><br>
-    <span class="kontakt">Kontakt: John Doe/johndoe@gmail.com/07xxxxxxxx</span>
+    <span class="starttid">Starttid: 13/3/2025 - 14:00</span><br>
+    <span class="problem">Problem: Användare Y kan inte logga in</span><br>
+    <span class="atgard">Åtgärd pågår: Omstart av server</span><br>
+    <span class="losningstid">Förväntad lösningstid: 1 dag</span><br>
+    <span class="uppdatering">Nästa uppdatering: Om 2 timmar</span><br>
+    <span class="kontakt">Kontakt: Jane Doe/janedoe@gmail.com/07yyyyyyyy</span>
   </div>
   
   <div class="flex-item1">
     <span class="lamp-container1">
       <div class="lamp1"></div>
-      <strong>Driftstörning - DX49KN0</strong>
+      <strong>Driftstörning - ZZZZZ</strong>
       <button class="editBtn">Redigera</button>
     </span><br>
-    <span class="starttid">Starttid: 12/3/2025 - 12:00</span><br>
-    <span class="problem">Problem: Användare X syns inte i systemet</span><br>
-    <span class="atgard">Åtgärd pågår: Inväntar sysadmin login</span><br>
-    <span class="losningstid">Förväntad lösningstid: 1-2 veckor</span><br>
-    <span class="uppdatering">Nästa uppdatering: Om 1 vecka</span><br>
-    <span class="kontakt">Kontakt: John Doe/johndoe@gmail.com/07xxxxxxxx</span>
-  </div>
-  
-  <div class="flex-item1">
-    <span class="lamp-container1">
-      <div class="lamp1"></div>
-      <strong>Driftstörning - DX49KN0</strong>
-      <button class="editBtn">Redigera</button>
-    </span><br>
-    <span class="starttid">Starttid: 12/3/2025 - 12:00</span><br>
-    <span class="problem">Problem: Användare X syns inte i systemet</span><br>
-    <span class="atgard">Åtgärd pågår: Inväntar sysadmin login</span><br>
-    <span class="losningstid">Förväntad lösningstid: 1-2 veckor</span><br>
-    <span class="uppdatering">Nästa uppdatering: Om 1 vecka</span><br>
-    <span class="kontakt">Kontakt: John Doe/johndoe@gmail.com/07xxxxxxxx</span>
-  </div>
-  
-  <div class="flex-item1">
-    <span class="lamp-container1">
-      <div class="lamp1"></div>
-      <strong>Driftstörning - DX49KN0</strong>
-      <button class="editBtn">Redigera</button>
-    </span><br>
-    <span class="starttid">Starttid: 12/3/2025 - 12:00</span><br>
-    <span class="problem">Problem: Användare X syns inte i systemet</span><br>
-    <span class="atgard">Åtgärd pågår: Inväntar sysadmin login</span><br>
-    <span class="losningstid">Förväntad lösningstid: 1-2 veckor</span><br>
-    <span class="uppdatering">Nästa uppdatering: Om 1 vecka</span><br>
-    <span class="kontakt">Kontakt: John Doe/johndoe@gmail.com/07xxxxxxxx</span>
+    <span class="starttid">Starttid: 14/3/2025 - 16:00</span><br>
+    <span class="problem">Problem: Användare Z har inte behörighet</span><br>
+    <span class="atgard">Åtgärd pågår: Uppdatering av databas</span><br>
+    <span class="losningstid">Förväntad lösningstid: 3 dagar</span><br>
+    <span class="uppdatering">Nästa uppdatering: Om 1 månad</span><br>
+    <span class="kontakt">Kontakt: Anonymous/anonymous@gmail.com/07zzzzzzzz</span>
   </div>
 </div>
 </div>
@@ -194,9 +194,9 @@
   <p class="footer-text">Telge</p>
 </footer>
 
-<script src="script/Malfunctions.js"></script>
-<script src="script/Ongoing.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+<script src="script/Malfunctions.js"></script>
+<script src="script/Ongoing.js"></script>
 </body>
 </html>
