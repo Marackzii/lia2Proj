@@ -25,8 +25,9 @@ function addUpcoming() {
     // Lägg till textinnehåll i contentDiv
     contentDiv.innerHTML = `
     <span class="lamp-container3">
-      ${lamp.outerHTML}
-      <strong>Driftstörning - ${systemName}</strong>
+        ${lamp.outerHTML}
+        <strong>Driftstörning - ${systemName}</strong>
+        <button class="editBtn">Redigera</button>
     </span><br>    
     <span class="starttid">Starttid: ${startTime}</span><br>
     <span class="problem">Problem: ${issue}</span><br>
@@ -36,19 +37,12 @@ function addUpcoming() {
     <span class="kontakt">Kontakt: ${contact}</span>
     `;
 
-    // Skapa redigera-knappen
-    const editBtn = document.createElement("button");
-    editBtn.textContent = "Redigera";
-    editBtn.classList.add("editBtn");
-    contentDiv.appendChild(editBtn);
-
-    // Lägg till event listener för redigera-knappen
-    editBtn.addEventListener("click", function (event) {
-        showEditForm(event, contentDiv);
-    });
-
     // Lägg till contentDiv i flexContainer
     flexContainer.appendChild(contentDiv);
+
+    contentDiv.querySelector(".editBtn").addEventListener("click", function (event) {
+    showEditForm(event, contentDiv);
+    });
 
     // Lägg till den nya flexContainer i en specifik container
     let upcomingContainer = document.querySelector(".upcoming-container");

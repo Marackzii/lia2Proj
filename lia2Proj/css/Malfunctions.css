@@ -72,7 +72,7 @@ h3 {
 
 /* För att ge en snygg effekt på collapsebar */
 .redcollapsebar {
-  transition: transform 0.3s ease;
+  transition: height 0.3s ease; /* Lägg till en smidig övergång */
 }
 
 #redtoggleCollapse {
@@ -146,11 +146,11 @@ h3 {
   background-color: #bbd197;
   color: rgb(0, 0, 0);
   cursor: pointer;
-  box-shadow: 0 4px 6px rgba(195, 98, 98, 0.222);
+  box-shadow: 0 4px 6px rgba(75, 91, 64, 0.205);
 }
 
 .editBtn:hover {
-  box-shadow: 0 6px 10px rgba(55, 38, 38, 0.205);
+  box-shadow: 0 6px 10px rgba(75, 91, 64, 0.205);
 }
 
 .editBtn:active {
@@ -248,4 +248,18 @@ h3 {
 
 .edit-input {
   margin: 3px;
+}
+
+.navbar-nav {
+  transition: transform 0.3s ease;
+}
+
+.navbar-nav.shift-left {
+  transform: translateX(-150px); /* Justera värdet beroende på sidebarens bredd */
+}
+
+.redcollapsebar.collapsed {
+  visibility: hidden; /* Dölj elementet men behåll dess utrymme */
+  height: 0; /* Sätt höjden till 0 för att minimera påverkan */
+  overflow: hidden; /* Dölj innehåll som inte får plats */
 }

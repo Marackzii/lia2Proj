@@ -50,11 +50,17 @@
 }
 
 .orangecollapsebar {
-  transition: transform 0.3s ease;
+  transition: height 0.3s ease;
 }
 
 #orangetoggleCollapse {
   padding: 4px 8px;
   background-color: white;
   border: none;
+}
+
+.orangecollapsebar.collapsed {
+  visibility: hidden; /* Dölj elementet men behåll dess utrymme */
+  height: 0; /* Sätt höjden till 0 för att minimera påverkan */
+  overflow: hidden; /* Dölj innehåll som inte får plats */
 }

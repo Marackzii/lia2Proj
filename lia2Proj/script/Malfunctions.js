@@ -3,7 +3,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     // Skapa instans av Sidebar och EditForm när DOM är laddad
     new Sidebar();
-    new EditForm();
 });
 
 // Sidebar-klass för att hantera öppning och stängning av sidepanelen
@@ -12,6 +11,7 @@ class Sidebar {
         this.sidebar = document.getElementById('mySidebar');
         this.openBtn = document.getElementById('openbtn');
         this.closeBtn = document.getElementById('closebtn');
+        this.navbarNav = document.querySelector(".navbar-nav");
         
         // Lägg till eventlyssnare för öppna/stänga
         this.openBtn.addEventListener('click', () => this.openNav());
@@ -22,12 +22,18 @@ class Sidebar {
     openNav() {
         this.sidebar.style.width = '150px'; // Du kan justera bredden efter behov
         document.getElementById("main").style.marginRight = "250px";
+
+        // Flytta navbar-länkar till vänster
+        this.navbarNav.classList.add("shift-left");
     }
 
     // Stäng sidepanelen
     closeNav() {
         this.sidebar.style.width = '0';
         document.getElementById("main").style.marginRight = '0';
+
+        // Återställ navbar-länkar till ursprunglig position
+        this.navbarNav.classList.remove("shift-left");
     }
 }
 
@@ -116,4 +122,30 @@ class CollapseController {
 
 document.addEventListener('DOMContentLoaded', () => {
     new CollapseController('redcollapsebar', 'redtoggleCollapse', '.flex-item1', 'main-content1');
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const redCollapseBar = document.getElementById("redcollapsebar");
+  const orangeCollapseBar = document.getElementById("orangecollapsebar");
+  const redToggleBtn = document.getElementById("redtoggleCollapse");
+  const orangeToggleBtn = document.getElementById("orangetoggleCollapse");
+
+  redToggleBtn.addEventListener("click", function () {
+    redCollapseBar.classList.toggle("collapsed");
+    adjustFooterPosition();
+  });
+
+  orangeToggleBtn.addEventListener("click", function () {
+    orangeCollapseBar.classList.toggle("collapsed");
+    adjustFooterPosition();
+  });
+
+  function adjustFooterPosition() {
+    const footer = document.querySelector("footer");
+    const mainContentHeight = document.getElementById("main-content1").offsetHeight +
+                              document.getElementById("main-content2").offsetHeight;
+
+    // Justera footerns position baserat på innehållets höjd
+    footer.style.marginTop = `${mainContentHeight}px`;
+  }
 });

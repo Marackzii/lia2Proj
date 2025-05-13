@@ -21,7 +21,7 @@ body {
   flex-wrap: wrap; /* Om du vill att de radbryts om det blir trångt */
   justify-content: center;
   gap: 50px;
-  background-color: #fdfdfd;
+  background-color: #fdfeff;
   border: 3px solid #2b6b88;
   border-radius: 40px;
   max-width: 400px;
@@ -32,6 +32,7 @@ body {
   opacity: 1;
   overflow: hidden;
   box-sizing: border-box; /* Inkludera padding och border i elementets totala bredd och höjd */
+  position: relative; /* Gör det möjligt att positionera barn relativt till denna container */
   margin-bottom: 50px; /* VIKTIG: Denna skapar mellanrum mellan footern och containerna men skapar också större gap mellan varje container */
 }
 
@@ -50,7 +51,7 @@ body {
 
 #createUpcomingBtn:hover {
   transition: 0.3s ease; /* Smidig övergång vid hover */
-  box-shadow: 0 6px 10px rgba(55, 38, 38, 0.205);
+  box-shadow: 0 6px 10px rgba(75, 91, 64, 0.205);
   background-color: rgba(221, 232, 203);
 }
 
@@ -96,6 +97,28 @@ h3 {
   border: none;
   border-radius: 5px;
   padding: 5px 10px;
+}
+
+.editBtn {
+  top: 10px; /* Justera avståndet från toppen */
+  right: 10px; /* Justera avståndet från höger */
+  font-size: 12px;
+  height: 40px;
+  padding: 4px 8px;
+  border: none;
+  border-radius: 8px;
+  background-color: #bbd197;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(75, 91, 64, 0.205);
+}
+
+.editBtn:hover {
+  box-shadow: 0 6px 10px rgba(75, 91, 64, 0.205);
+}
+
+.editBtn:active {
+  transform: scale(0.98);
 }
 
 .footer-text {

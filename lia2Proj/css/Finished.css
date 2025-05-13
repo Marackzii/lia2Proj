@@ -36,7 +36,7 @@ html, body {
 table.table {
   display: table !important;
   width: 80% !important; /* Viktigt: lägg till !important */
-  margin: auto; /* Centrerar tabellen med */
+  margin: auto; /* Centrerar tabellen */
   overflow: visible;
   background-color: #f9f9f9;
 }
