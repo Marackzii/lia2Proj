@@ -1,7 +1,7 @@
 'use strict';
 
 document.addEventListener("DOMContentLoaded", function () {
-    // Skapa instans av Sidebar och EditForm när DOM är laddad
+    // Skapa instans av Sidebar när DOM är laddad
     new Sidebar();
 });
 
@@ -132,20 +132,86 @@ document.addEventListener("DOMContentLoaded", function () {
 
   redToggleBtn.addEventListener("click", function () {
     redCollapseBar.classList.toggle("collapsed");
-    adjustFooterPosition();
   });
 
   orangeToggleBtn.addEventListener("click", function () {
     orangeCollapseBar.classList.toggle("collapsed");
-    adjustFooterPosition();
   });
-
-  function adjustFooterPosition() {
-    const footer = document.querySelector("footer");
-    const mainContentHeight = document.getElementById("main-content1").offsetHeight +
-                              document.getElementById("main-content2").offsetHeight;
-
-    // Justera footerns position baserat på innehållets höjd
-    footer.style.marginTop = `${mainContentHeight}px`;
-  }
 });
+
+// Funktion för att flytta kort mellan sektionerna och ändra färg
+function moveCardToAnotherSection(cardElement, targetContainer) {
+    // Flytta kortet till målcontainern
+    targetContainer.appendChild(cardElement);
+
+    // Ändra färg baserat på målcontainern
+    if (targetContainer.classList.contains('flex-wrapper1'&&'lamp-container1')) {
+        cardElement.style.borderColor = '#e12a2a'; // Röd färg
+        cardElement.style.backgroundColor = 'red'; 
+    } else if (targetContainer.classList.contains('flex-wrapper2')) {
+        cardElement.style.borderColor = '#f8c621'; // Orange färg
+    }
+}
+
+// Lägg till event listeners för flyttknapparna
+document.querySelectorAll('.moveBtn').forEach(button => {
+    button.addEventListener('click', function (event) {
+        // Hitta både röda och orangea kort
+        const cardElement = event.target.closest('.flex-item1') || event.target.closest('.flex-item2');
+        if (!cardElement) return;
+
+        const currentWrapper = cardElement.parentElement;
+        let targetWrapper;
+
+        if (currentWrapper.classList.contains('flex-wrapper1')) {
+            targetWrapper = document.querySelector('.flex-wrapper2');
+        } else if (currentWrapper.classList.contains('flex-wrapper2')) {
+            targetWrapper = document.querySelector('.flex-wrapper1');
+        } else {
+            return;
+        }
+
+        moveCardToAnotherSection(cardElement, targetWrapper);
+    });
+});
+
+// Funktion för att flytta kort mellan sektionerna och ändra färg och lampa
+function moveCardToAnotherSection(cardElement, targetContainer) {
+    // Flytta kortet till målcontainern
+    targetContainer.appendChild(cardElement);
+
+    // Ta bort gamla lamp-klasser
+    const lamp = cardElement.querySelector('.lamp1, .lamp2');
+    if (lamp) {
+        lamp.classList.remove('lamp1', 'lamp2');
+    }
+
+    // Ändra lampa baserat på målcontainern
+    if (targetContainer.classList.contains('flex-wrapper1')) {
+        cardElement.style.borderColor = '#e12a2a'; // Röd färg
+        // Byt till röd lampa
+        if (lamp) lamp.classList.add('lamp1');
+        // Byt klasser för kortet
+        cardElement.classList.remove('flex-item2');
+        cardElement.classList.add('flex-item1');
+        // Byt lamp-container klass om det behövs
+        const lampContainer = cardElement.querySelector('.lamp-container2, .lamp-container1');
+        if (lampContainer) {
+            lampContainer.classList.remove('lamp-container2');
+            lampContainer.classList.add('lamp-container1');
+        }
+    } else if (targetContainer.classList.contains('flex-wrapper2')) {
+        cardElement.style.borderColor = '#f8c621'; // Orange färg
+        // Byt till orange lampa
+        if (lamp) lamp.classList.add('lamp2');
+        // Byt klasser för kortet
+        cardElement.classList.remove('flex-item1');
+        cardElement.classList.add('flex-item2');
+        // Byt lamp-container klass om det behövs
+        const lampContainer = cardElement.querySelector('.lamp-container1, .lamp-container2');
+        if (lampContainer) {
+            lampContainer.classList.remove('lamp-container1');
+            lampContainer.classList.add('lamp-container2');
+        }
+    }
+}

@@ -1,5 +1,9 @@
 body {
-    overflow-x: hidden; /* Förhindra horisontell scroll */
+  overflow-x: hidden; /* Förhindra horisontell scroll */
+}
+
+.content {
+  flex: 1 0 auto; /* Gör att main tar så mycket plats som behövs */
 }
 
 .lamp-container3 {
@@ -14,6 +18,7 @@ body {
   box-shadow: 0 0 2px 2px #2b6b88; /* Skugga för lampa-effekt */
   border-radius: 50%; /* Gör lampan rund */
   margin-right: 10px; /* Lägger till lite mellanrum mellan lampan och texten */
+  flex-shrink: 0;
 }
 
 .flex-container3 {
@@ -122,5 +127,5 @@ h3 {
 }
 
 .footer-text {
-  position: fixed; /*VIKTIG: Hitta en lösning utan pos fixed för det är den enda som inte sätter footern i mitten på sidan*/
+  position: relative;
 }
