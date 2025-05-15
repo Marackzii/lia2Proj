@@ -105,16 +105,16 @@ class CollapseController {
     constructor(collapsebarId, toggleBtnId, itemsSelector, mainContentId) {
         this.collapsebar = document.getElementById(collapsebarId);
         this.toggleBtn = document.getElementById(toggleBtnId);
-        this.items = document.querySelectorAll(itemsSelector);
+        this.itemsSelector = itemsSelector; // Spara selektorn dynamiskt istället för en statisk lista
         this.mainContent = document.getElementById(mainContentId);
 
         this.toggleBtn.addEventListener('click', () => this.toggle());
     }
 
     toggle() {
-        this.collapsebar.classList.toggle('collapsed');
         this.mainContent.classList.toggle('collapsed-margin');
-        this.items.forEach(item => {
+        // Hämta aktuella items varje gång
+        document.querySelectorAll(this.itemsSelector).forEach(item => {
             item.classList.toggle('collapsed');
         });
     }
@@ -122,21 +122,6 @@ class CollapseController {
 
 document.addEventListener('DOMContentLoaded', () => {
     new CollapseController('redcollapsebar', 'redtoggleCollapse', '.flex-item1', 'main-content1');
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-  const redCollapseBar = document.getElementById("redcollapsebar");
-  const orangeCollapseBar = document.getElementById("orangecollapsebar");
-  const redToggleBtn = document.getElementById("redtoggleCollapse");
-  const orangeToggleBtn = document.getElementById("orangetoggleCollapse");
-
-  redToggleBtn.addEventListener("click", function () {
-    redCollapseBar.classList.toggle("collapsed");
-  });
-
-  orangeToggleBtn.addEventListener("click", function () {
-    orangeCollapseBar.classList.toggle("collapsed");
-  });
 });
 
 // Funktion för att flytta kort mellan sektionerna och ändra färg
