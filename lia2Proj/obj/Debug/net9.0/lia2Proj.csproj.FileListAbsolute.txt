@@ -16,14 +16,9 @@ c:\Users\Dindator\Desktop\Development\Projects\Praktikprojekt2_new\lia2Proj\obj\
 c:\Users\Dindator\Desktop\Development\Projects\Praktikprojekt2_new\lia2Proj\obj\Debug\net9.0\staticwebassets.build.json
 c:\Users\Dindator\Desktop\Development\Projects\Praktikprojekt2_new\lia2Proj\obj\Debug\net9.0\staticwebassets.development.json
 c:\Users\Dindator\Desktop\Development\Projects\Praktikprojekt2_new\lia2Proj\obj\Debug\net9.0\staticwebassets.build.endpoints.json
-c:\Users\Dindator\Desktop\Development\Projects\Praktikprojekt2_new\lia2Proj\obj\Debug\net9.0\staticwebassets\msbuild.lia2Proj.Microsoft.AspNetCore.StaticWebAssets.props
-c:\Users\Dindator\Desktop\Development\Projects\Praktikprojekt2_new\lia2Proj\obj\Debug\net9.0\staticwebassets\msbuild.lia2Proj.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
-c:\Users\Dindator\Desktop\Development\Projects\Praktikprojekt2_new\lia2Proj\obj\Debug\net9.0\staticwebassets\msbuild.build.lia2Proj.props
-c:\Users\Dindator\Desktop\Development\Projects\Praktikprojekt2_new\lia2Proj\obj\Debug\net9.0\staticwebassets\msbuild.buildMultiTargeting.lia2Proj.props
-c:\Users\Dindator\Desktop\Development\Projects\Praktikprojekt2_new\lia2Proj\obj\Debug\net9.0\staticwebassets\msbuild.buildTransitive.lia2Proj.props
-c:\Users\Dindator\Desktop\Development\Projects\Praktikprojekt2_new\lia2Proj\obj\Debug\net9.0\staticwebassets.pack.json
 c:\Users\Dindator\Desktop\Development\Projects\Praktikprojekt2_new\lia2Proj\obj\Debug\net9.0\lia2Proj.dll
 c:\Users\Dindator\Desktop\Development\Projects\Praktikprojekt2_new\lia2Proj\obj\Debug\net9.0\refint\lia2Proj.dll
 c:\Users\Dindator\Desktop\Development\Projects\Praktikprojekt2_new\lia2Proj\obj\Debug\net9.0\lia2Proj.pdb
 c:\Users\Dindator\Desktop\Development\Projects\Praktikprojekt2_new\lia2Proj\obj\Debug\net9.0\lia2Proj.genruntimeconfig.cache
 c:\Users\Dindator\Desktop\Development\Projects\Praktikprojekt2_new\lia2Proj\obj\Debug\net9.0\ref\lia2Proj.dll
+C:\Users\Dindator\Desktop\Development\Projects\Praktikprojekt2_new\lia2Proj\obj\Debug\net9.0\staticwebassets.build.json.cache
